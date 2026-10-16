@@ -1,0 +1,25 @@
+# Build context for the backend image.  The context is `project/` so one Dockerfile can
+# copy both `backend/` and the shared `scripts/` bootstrap.  Nothing private, generated
+# or host-specific may ever reach a layer.
+**/.local/
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+**/playwright-report/
+**/test-results/
+**/.env
+**/.env.*
+**/*.token
+**/*.pem
+**/*.key
+
+# Not needed by the backend image.
+frontend/
+docs/

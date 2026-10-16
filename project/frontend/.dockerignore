@@ -1,0 +1,11 @@
+# Build context for the frontend image.  Dependencies are installed from the lock file
+# inside the image, never copied from the developer checkout.
+node_modules/
+dist/
+.vite/
+coverage/
+playwright-report/
+test-results/
+playwright/.cache/
+.env
+.env.*

@@ -1,0 +1,58 @@
+name: Public source checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/check_public_release.py
+      - name: Scan published files with Gitleaks
+        run: |
+          curl --fail --silent --show-error --location --output /tmp/gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  /tmp/gitleaks.tar.gz' | sha256sum --check
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          /tmp/gitleaks dir . --redact --config .gitleaks.toml --no-banner
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: project/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: project/frontend/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test -- --maxWorkers=2 --fileParallelism=false
+      - run: npm run build
+
+  offline-backend-contracts:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: project/backend
+    env:
+      AGENT_MODEL_LIVE_RUN: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.11.1'
+          python-version: '3.12'
+      - run: uv sync --locked
+      - run: uv run --no-sync pytest -q -p no:cacheprovider tests/test_contracts.py tests/test_manifest.py tests/test_synthetic.py tests/test_rules.py tests/test_rules_v2.py tests/test_gold_set.py tests/test_gold_set_v2.py tests/test_model_adapters.py tests/test_workers.py tests/test_review_graph.py tests/test_chat_adapter.py tests/test_v1_07c_probe.py tests/test_v1_07c_probe_revision.py tests/test_v1_07f_focused_probe.py tests/test_fix05_doc_sources.py tests/test_fix01d_quality_gate.py tests/test_fix05_quality_gate.py tests/test_fix06e_failure_finalization.py tests/test_v1_07f_request_authorization.py tests/test_ingestion.py tests/test_mcp_server.py tests/test_procurement_mcp_client.py

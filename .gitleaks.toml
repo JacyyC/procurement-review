@@ -1,0 +1,114 @@
+title = "Public source scan: reviewed checksums and synthetic fixtures only"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^aud2\-05\-foreign$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix01b_record_export\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^fix08\-outage$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix08_result_consumption\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^fix09c\-outage$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix09_lifecycle_invocation\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^fix09c\-two\-healthy$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix09_lifecycle_invocation\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^fix09c\-two\-held$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix09_lifecycle_invocation\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^obligation=O\-08$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_v1_07g_paired_layers\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^sk\-live\-1234567890ab$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_eval_audit\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^v\-03a\-04\-poisoned$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix03a_transactions\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^v\-03b\-03\-downgrade$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix03b_read_guard\.py$''',
+]
+
+[[allowlists]]
+description = "Reviewed synthetic fixture or public metric identifier; exact value and file only"
+condition = "AND"
+targetRules = ["generic-api-key"]
+regexTarget = "secret"
+regexes = [ '''^v\-b\-01\-w\-interrupt$''' ]
+paths = [
+  '''(?:^|/)\.gitleaks\.toml$''',
+  '''(?:^|/)project/backend/tests/test_fix01b_record_integrity\.py$''',
+]

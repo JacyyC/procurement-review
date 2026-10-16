@@ -1,0 +1,339 @@
+{
+  "schema_version": "worker-model-fixture.v1",
+  "fixture_version": "worker-model-fixture-v1",
+  "adapter_version": "deterministic-fake-worker-model-v1",
+  "test_only": true,
+  "fixtures": [
+    {
+      "fixture_id": "policy-low",
+      "worker": "policy",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "policy",
+          "finding_key": "policy.required_policy_evidence",
+          "category": "policy_compliance",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The declared policy evidence contains the competitive bidding threshold control.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-competition",
+              "version": "source-version-b86ccba7b5a207ae9a3c1221ea7ae16336dbda87dd49ec05dd018d01e99cf97c",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-ce3f49565305248aa10702b24cd2eafff11195c5857074849e9cfdb856337926",
+              "content_checksum": "sha256:def48b1a57c1be5d98f83d176b092d9d113d1d7ae09d691ed27a0a46f25af2b2"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Keep the policy evidence attached for human confirmation."
+        }
+      ]
+    },
+    {
+      "fixture_id": "policy-high",
+      "worker": "policy",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "policy",
+          "finding_key": "policy.required_policy_evidence",
+          "category": "policy_compliance",
+          "risk_level": "high",
+          "assertion": "risk_present",
+          "statement": "The declared fixture marks the policy threshold control as a high-risk exception.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-competition",
+              "version": "source-version-b86ccba7b5a207ae9a3c1221ea7ae16336dbda87dd49ec05dd018d01e99cf97c",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-ce3f49565305248aa10702b24cd2eafff11195c5857074849e9cfdb856337926",
+              "content_checksum": "sha256:def48b1a57c1be5d98f83d176b092d9d113d1d7ae09d691ed27a0a46f25af2b2"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Reject the recommendation until a human resolves the policy exception."
+        }
+      ]
+    },
+    {
+      "fixture_id": "policy-conflict-present",
+      "worker": "policy",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "policy",
+          "finding_key": "policy.required_policy_evidence",
+          "category": "policy_compliance",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The required policy control is present in the declared evidence.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-competition",
+              "version": "source-version-b86ccba7b5a207ae9a3c1221ea7ae16336dbda87dd49ec05dd018d01e99cf97c",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-ce3f49565305248aa10702b24cd2eafff11195c5857074849e9cfdb856337926",
+              "content_checksum": "sha256:def48b1a57c1be5d98f83d176b092d9d113d1d7ae09d691ed27a0a46f25af2b2"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Keep the policy evidence attached for human confirmation."
+        },
+        {
+          "schema_version": "1.0",
+          "worker": "policy",
+          "finding_key": "shared.fixture_conflict",
+          "category": "policy_compliance",
+          "risk_level": "medium",
+          "assertion": "risk_present",
+          "statement": "The policy fixture declares the shared control present as a risk.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-competition",
+              "version": "source-version-b86ccba7b5a207ae9a3c1221ea7ae16336dbda87dd49ec05dd018d01e99cf97c",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-ce3f49565305248aa10702b24cd2eafff11195c5857074849e9cfdb856337926",
+              "content_checksum": "sha256:def48b1a57c1be5d98f83d176b092d9d113d1d7ae09d691ed27a0a46f25af2b2"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Escalate the conflicting fixture assertion."
+        }
+      ]
+    },
+    {
+      "fixture_id": "contract-low",
+      "worker": "contract",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "contract",
+          "finding_key": "contract.required_terms",
+          "category": "contract_terms",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The declared contract evidence contains payment and termination terms.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-contract",
+              "version": "source-version-2e3bcb97b49a271ead0f6b917726a7b7169f19e817b365c310f55fb9f25eb7de",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-90d74d42793b63522002e32409131288e9f82eb5d2d59003313436503a8c2ab1",
+              "content_checksum": "sha256:9c8d9c6c385138e06b223ae3e6bca32da4da66394577e8df3e77d2b3ad94b44b"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Keep the contract evidence attached for human confirmation."
+        }
+      ]
+    },
+    {
+      "fixture_id": "contract-conflict-absent",
+      "worker": "contract",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "contract",
+          "finding_key": "contract.required_terms",
+          "category": "contract_terms",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The required contract terms are present in the declared evidence.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-contract",
+              "version": "source-version-2e3bcb97b49a271ead0f6b917726a7b7169f19e817b365c310f55fb9f25eb7de",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-90d74d42793b63522002e32409131288e9f82eb5d2d59003313436503a8c2ab1",
+              "content_checksum": "sha256:9c8d9c6c385138e06b223ae3e6bca32da4da66394577e8df3e77d2b3ad94b44b"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Keep the contract evidence attached for human confirmation."
+        },
+        {
+          "schema_version": "1.0",
+          "worker": "contract",
+          "finding_key": "shared.fixture_conflict",
+          "category": "contract_terms",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The contract fixture declares the shared control absent as a risk.",
+          "status": "supported",
+          "evidence_refs": [
+            {
+              "schema_version": "1.0",
+              "source_kind": "public_document",
+              "source_id": "fixture-contract",
+              "version": "source-version-2e3bcb97b49a271ead0f6b917726a7b7169f19e817b365c310f55fb9f25eb7de",
+              "page_number": null,
+              "section": "lines:1-1:part:1",
+              "chunk_id": "chunk-90d74d42793b63522002e32409131288e9f82eb5d2d59003313436503a8c2ab1",
+              "content_checksum": "sha256:9c8d9c6c385138e06b223ae3e6bca32da4da66394577e8df3e77d2b3ad94b44b"
+            }
+          ],
+          "business_fact_refs": [],
+          "missing_information": [],
+          "recommended_action": "Escalate the conflicting fixture assertion."
+        }
+      ]
+    },
+    {
+      "fixture_id": "procurement-low",
+      "worker": "procurement_data",
+      "findings": [
+        {
+          "schema_version": "1.0",
+          "worker": "procurement_data",
+          "finding_key": "procurement.required_business_facts",
+          "category": "procurement_anomaly",
+          "risk_level": "low",
+          "assertion": "risk_absent",
+          "statement": "The declared procurement fixture has matching order, supplier, and transaction facts.",
+          "status": "supported",
+          "evidence_refs": [],
+          "business_fact_refs": [
+            {
+              "schema_version": "1.0",
+              "tool_name": "get_purchase_order",
+              "record_id": "PO-001",
+              "dataset_version": "synthetic-procurement.v1",
+              "as_of": "2026-06-30T00:00:00Z",
+              "status": "known",
+              "result": {
+                "purchase_order_id": "PO-001",
+                "supplier_id": "SUP-001",
+                "ordered_on": "2026-03-27",
+                "amount_minor": 958900,
+                "currency": "CNY",
+                "invoice_amount_minor": 958900,
+                "invoice_currency": "CNY",
+                "contract_reference": "SYN-CONTRACT-001",
+                "competitive_quote_count": 3,
+                "requesting_unit": "Synthetic Operations",
+                "status": "pending_review"
+              },
+              "failure_reason": null,
+              "read_only": true
+            },
+            {
+              "schema_version": "1.0",
+              "tool_name": "get_supplier",
+              "record_id": "SUP-001",
+              "dataset_version": "synthetic-procurement.v1",
+              "as_of": "2026-06-30T00:00:00Z",
+              "status": "known",
+              "result": {
+                "supplier_id": "SUP-001",
+                "display_name": "Synthetic Supplier 01",
+                "jurisdiction": "CN-11",
+                "registry_status": "active",
+                "procurement_status": "approved",
+                "due_diligence_status": "verified",
+                "sanctions_screening": "clear",
+                "tax_identifier": "SYN-TAX-001",
+                "onboarded_on": "2024-04-26",
+                "risk_signals": []
+              },
+              "failure_reason": null,
+              "read_only": true
+            },
+            {
+              "schema_version": "1.0",
+              "tool_name": "list_historical_transactions",
+              "record_id": "TXN-001",
+              "dataset_version": "synthetic-procurement.v1",
+              "as_of": "2026-06-30T00:00:00Z",
+              "status": "known",
+              "result": {
+                "transaction_id": "TXN-001",
+                "purchase_order_id": "PO-001",
+                "supplier_id": "SUP-001",
+                "booked_on": "2026-04-03",
+                "amount_minor": 319633,
+                "currency": "CNY",
+                "status": "settled",
+                "counterparty_reference": "SYN-COUNTERPARTY-001"
+              },
+              "failure_reason": null,
+              "read_only": true
+            },
+            {
+              "schema_version": "1.0",
+              "tool_name": "list_historical_transactions",
+              "record_id": "TXN-002",
+              "dataset_version": "synthetic-procurement.v1",
+              "as_of": "2026-06-30T00:00:00Z",
+              "status": "known",
+              "result": {
+                "transaction_id": "TXN-002",
+                "purchase_order_id": "PO-001",
+                "supplier_id": "SUP-001",
+                "booked_on": "2026-04-10",
+                "amount_minor": 319633,
+                "currency": "CNY",
+                "status": "settled",
+                "counterparty_reference": "SYN-COUNTERPARTY-002"
+              },
+              "failure_reason": null,
+              "read_only": true
+            },
+            {
+              "schema_version": "1.0",
+              "tool_name": "list_historical_transactions",
+              "record_id": "TXN-003",
+              "dataset_version": "synthetic-procurement.v1",
+              "as_of": "2026-06-30T00:00:00Z",
+              "status": "known",
+              "result": {
+                "transaction_id": "TXN-003",
+                "purchase_order_id": "PO-001",
+                "supplier_id": "SUP-001",
+                "booked_on": "2026-04-17",
+                "amount_minor": 319634,
+                "currency": "CNY",
+                "status": "settled",
+                "counterparty_reference": "SYN-COUNTERPARTY-003"
+              },
+              "failure_reason": null,
+              "read_only": true
+            }
+          ],
+          "missing_information": [],
+          "recommended_action": "Keep the synthetic procurement facts attached for human confirmation."
+        }
+      ]
+    }
+  ]
+}

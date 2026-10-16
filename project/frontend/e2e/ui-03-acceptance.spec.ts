@@ -1,0 +1,53 @@
+import { fullPage } from './full-page'
+import { execFileSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import { expect, test } from '@playwright/test'
+
+const helper = fileURLToPath(new URL('./review-db.mjs', import.meta.url))
+
+test('top identity is non-modal and preserves the active review, tab and session replay', async ({ page }, info) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: '连接工作台' }).click()
+  await expect(page.getByLabel('Bearer 凭据')).toBeFocused()
+  const token = execFileSync(process.execPath, [helper, 'token', 'operator'], { encoding: 'utf8' }).trim()
+  await page.getByLabel('Bearer 凭据').fill(token)
+  await page.getByRole('button', { name: '验证凭据' }).click()
+  const trigger = page.getByRole('button', { name: '身份与权限' })
+  await expect(trigger).toHaveAttribute('aria-expanded', 'false')
+  await page.getByLabel('已授权案例').selectOption('CASE-LOW-001')
+  const created = page.waitForResponse((response) => response.url().endsWith('/api/v2/reviews') && response.request().method() === 'POST')
+  await page.getByRole('button', { name: '运行审查', exact: true }).click()
+  const response = await created
+  expect(response.status()).toBe(202)
+  await expect(page.locator('.run-title code').first()).toHaveAttribute('title', (await response.json()).run_id)
+  await expect(page.getByRole('heading', { name: '建议通过', exact: true })).toBeVisible()
+  const runId = await page.locator('.run-title code').first().getAttribute('title')
+  await page.getByRole('tab', { name: /运行 Trace/ }).click()
+  await trigger.click()
+  await expect(page.locator('#identity-panel')).toBeFocused()
+  await expect(page.getByTestId('identity-subject')).toHaveText('subject-local-demo')
+  await expect(page.getByTestId('identity-scopes')).toContainText('review:create')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await page.keyboard.press('Escape')
+  await expect(trigger).toBeFocused()
+  await expect(trigger).toHaveAttribute('aria-expanded', 'false')
+  await expect(page.getByRole('tab', { name: /运行 Trace/ })).toHaveAttribute('aria-selected', 'true')
+  await trigger.press('Enter')
+  await page.getByRole('button', { name: '关闭身份面板' }).click()
+  await expect(trigger).toBeFocused()
+  await expect(page.locator('.run-title code').first()).toHaveAttribute('title', runId!)
+  await expect(page.getByRole('button', { name: '重放最近创建请求' })).toBeEnabled()
+  await trigger.click()
+  // The rest of the page remains interactive while the non-modal panel is open.
+  await page.getByRole('tab', { name: '审查结果', exact: true }).click()
+  await expect(page.getByRole('heading', { name: '建议通过', exact: true })).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(trigger).toBeFocused()
+  await trigger.click()
+  await fullPage(page, { path: `e2e/ui-03-evidence/b-identity-${info.project.name}.png`, fullPage: true })
+  await page.getByRole('button', { name: '退出并清除' }).click()
+  await expect(page.getByLabel('Bearer 凭据')).toHaveValue('')
+  await expect(page.getByTestId('identity-subject')).toHaveCount(0)
+  await expect(page.locator('[data-run-id]')).toHaveCount(0)
+  expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length, cookie: document.cookie }))).toEqual({ local: 0, session: 0, cookie: '' })
+})

@@ -1,0 +1,1575 @@
+{
+  "digest_algorithm": "sha256",
+  "envelope_schema_version": "procurement-synthetic-envelope.v1",
+  "payload": {
+    "as_of": "2026-06-30",
+    "dataset_version": "synthetic-procurement.v1",
+    "fixture_schema_version": "procurement-synthetic-fixture.v1",
+    "generator_version": "procurement-synthetic-generator.v1",
+    "ground_truth_cases": [
+      {
+        "case_id": "CASE-001",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "baseline_controls_satisfied"
+        ],
+        "expected_recommendation": "recommend_approve",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "low",
+        "must_fail_closed": false,
+        "purchase_order_id": "PO-001",
+        "scenario": "normal",
+        "supplier_id": "SUP-001",
+        "transaction_ids": [
+          "TXN-001",
+          "TXN-002",
+          "TXN-003"
+        ]
+      },
+      {
+        "case_id": "CASE-002",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired",
+          "transaction_total_exceeds_order"
+        ],
+        "expected_recommendation": "recommend_reject",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "critical",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-003",
+        "scenario": "high_risk",
+        "supplier_id": "SUP-002",
+        "transaction_ids": [
+          "TXN-007",
+          "TXN-008",
+          "TXN-009"
+        ]
+      },
+      {
+        "case_id": "CASE-003",
+        "expected_conflicts": [],
+        "expected_missing_fields": [
+          "supplier.tax_identifier",
+          "supplier.due_diligence_status",
+          "purchase_order.contract_reference",
+          "purchase_order.competitive_quote_count",
+          "historical_transaction.counterparty_reference"
+        ],
+        "expected_reasons": [
+          "tax_identifier_missing",
+          "due_diligence_missing",
+          "contract_reference_missing",
+          "competitive_quotes_missing",
+          "transaction_counterparty_missing"
+        ],
+        "expected_recommendation": "insufficient_information",
+        "expected_review_state": "required",
+        "expected_risk_level": "unknown",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-005",
+        "scenario": "missing_information",
+        "supplier_id": "SUP-003",
+        "transaction_ids": [
+          "TXN-013",
+          "TXN-014",
+          "TXN-015"
+        ]
+      },
+      {
+        "case_id": "CASE-004",
+        "expected_conflicts": [
+          {
+            "conflict_code": "supplier_status_conflict",
+            "left_reference": "supplier:SUP-004:registry_status",
+            "left_value": "active",
+            "right_reference": "supplier:SUP-004:procurement_status",
+            "right_value": "blocked"
+          },
+          {
+            "conflict_code": "order_invoice_currency_conflict",
+            "left_reference": "purchase_order:PO-007:currency",
+            "left_value": "CNY",
+            "right_reference": "purchase_order:PO-007:invoice_currency",
+            "right_value": "USD"
+          },
+          {
+            "conflict_code": "order_invoice_amount_conflict",
+            "left_reference": "purchase_order:PO-007:amount_minor",
+            "left_value": "469500",
+            "right_reference": "purchase_order:PO-007:invoice_amount_minor",
+            "right_value": "513600"
+          }
+        ],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "supplier_status_conflict",
+          "currency_conflict",
+          "amount_conflict"
+        ],
+        "expected_recommendation": "needs_human_review",
+        "expected_review_state": "required",
+        "expected_risk_level": "high",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-007",
+        "scenario": "fact_conflict",
+        "supplier_id": "SUP-004",
+        "transaction_ids": [
+          "TXN-019",
+          "TXN-020",
+          "TXN-021"
+        ]
+      },
+      {
+        "case_id": "CASE-005",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "baseline_controls_satisfied"
+        ],
+        "expected_recommendation": "recommend_approve",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "low",
+        "must_fail_closed": false,
+        "purchase_order_id": "PO-009",
+        "scenario": "normal",
+        "supplier_id": "SUP-005",
+        "transaction_ids": [
+          "TXN-025",
+          "TXN-026",
+          "TXN-027"
+        ]
+      },
+      {
+        "case_id": "CASE-006",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired",
+          "transaction_total_exceeds_order"
+        ],
+        "expected_recommendation": "recommend_reject",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "critical",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-011",
+        "scenario": "high_risk",
+        "supplier_id": "SUP-006",
+        "transaction_ids": [
+          "TXN-031",
+          "TXN-032",
+          "TXN-033"
+        ]
+      },
+      {
+        "case_id": "CASE-007",
+        "expected_conflicts": [],
+        "expected_missing_fields": [
+          "supplier.tax_identifier",
+          "supplier.due_diligence_status",
+          "purchase_order.contract_reference",
+          "purchase_order.competitive_quote_count",
+          "historical_transaction.counterparty_reference"
+        ],
+        "expected_reasons": [
+          "tax_identifier_missing",
+          "due_diligence_missing",
+          "contract_reference_missing",
+          "competitive_quotes_missing",
+          "transaction_counterparty_missing"
+        ],
+        "expected_recommendation": "insufficient_information",
+        "expected_review_state": "required",
+        "expected_risk_level": "unknown",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-013",
+        "scenario": "missing_information",
+        "supplier_id": "SUP-007",
+        "transaction_ids": [
+          "TXN-037",
+          "TXN-038",
+          "TXN-039"
+        ]
+      },
+      {
+        "case_id": "CASE-008",
+        "expected_conflicts": [
+          {
+            "conflict_code": "supplier_status_conflict",
+            "left_reference": "supplier:SUP-008:registry_status",
+            "left_value": "active",
+            "right_reference": "supplier:SUP-008:procurement_status",
+            "right_value": "blocked"
+          },
+          {
+            "conflict_code": "order_invoice_currency_conflict",
+            "left_reference": "purchase_order:PO-015:currency",
+            "left_value": "CNY",
+            "right_reference": "purchase_order:PO-015:invoice_currency",
+            "right_value": "USD"
+          },
+          {
+            "conflict_code": "order_invoice_amount_conflict",
+            "left_reference": "purchase_order:PO-015:amount_minor",
+            "left_value": "526300",
+            "right_reference": "purchase_order:PO-015:invoice_amount_minor",
+            "right_value": "551400"
+          }
+        ],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "supplier_status_conflict",
+          "currency_conflict",
+          "amount_conflict"
+        ],
+        "expected_recommendation": "needs_human_review",
+        "expected_review_state": "required",
+        "expected_risk_level": "high",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-015",
+        "scenario": "fact_conflict",
+        "supplier_id": "SUP-008",
+        "transaction_ids": [
+          "TXN-043",
+          "TXN-044",
+          "TXN-045"
+        ]
+      },
+      {
+        "case_id": "CASE-009",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "baseline_controls_satisfied"
+        ],
+        "expected_recommendation": "recommend_approve",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "low",
+        "must_fail_closed": false,
+        "purchase_order_id": "PO-017",
+        "scenario": "normal",
+        "supplier_id": "SUP-009",
+        "transaction_ids": [
+          "TXN-049",
+          "TXN-050",
+          "TXN-051"
+        ]
+      },
+      {
+        "case_id": "CASE-010",
+        "expected_conflicts": [],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired",
+          "transaction_total_exceeds_order"
+        ],
+        "expected_recommendation": "recommend_reject",
+        "expected_review_state": "pending_confirmation",
+        "expected_risk_level": "critical",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-019",
+        "scenario": "high_risk",
+        "supplier_id": "SUP-010",
+        "transaction_ids": [
+          "TXN-055",
+          "TXN-056",
+          "TXN-057"
+        ]
+      },
+      {
+        "case_id": "CASE-011",
+        "expected_conflicts": [],
+        "expected_missing_fields": [
+          "supplier.tax_identifier",
+          "supplier.due_diligence_status",
+          "purchase_order.contract_reference",
+          "purchase_order.competitive_quote_count",
+          "historical_transaction.counterparty_reference"
+        ],
+        "expected_reasons": [
+          "tax_identifier_missing",
+          "due_diligence_missing",
+          "contract_reference_missing",
+          "competitive_quotes_missing",
+          "transaction_counterparty_missing"
+        ],
+        "expected_recommendation": "insufficient_information",
+        "expected_review_state": "required",
+        "expected_risk_level": "unknown",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-021",
+        "scenario": "missing_information",
+        "supplier_id": "SUP-011",
+        "transaction_ids": [
+          "TXN-061",
+          "TXN-062",
+          "TXN-063"
+        ]
+      },
+      {
+        "case_id": "CASE-012",
+        "expected_conflicts": [
+          {
+            "conflict_code": "supplier_status_conflict",
+            "left_reference": "supplier:SUP-012:registry_status",
+            "left_value": "active",
+            "right_reference": "supplier:SUP-012:procurement_status",
+            "right_value": "blocked"
+          },
+          {
+            "conflict_code": "order_invoice_currency_conflict",
+            "left_reference": "purchase_order:PO-023:currency",
+            "left_value": "CNY",
+            "right_reference": "purchase_order:PO-023:invoice_currency",
+            "right_value": "USD"
+          },
+          {
+            "conflict_code": "order_invoice_amount_conflict",
+            "left_reference": "purchase_order:PO-023:amount_minor",
+            "left_value": "554100",
+            "right_reference": "purchase_order:PO-023:invoice_amount_minor",
+            "right_value": "576600"
+          }
+        ],
+        "expected_missing_fields": [],
+        "expected_reasons": [
+          "supplier_status_conflict",
+          "currency_conflict",
+          "amount_conflict"
+        ],
+        "expected_recommendation": "needs_human_review",
+        "expected_review_state": "required",
+        "expected_risk_level": "high",
+        "must_fail_closed": true,
+        "purchase_order_id": "PO-023",
+        "scenario": "fact_conflict",
+        "supplier_id": "SUP-012",
+        "transaction_ids": [
+          "TXN-067",
+          "TXN-068",
+          "TXN-069"
+        ]
+      }
+    ],
+    "historical_transactions": [
+      {
+        "amount_minor": 319633,
+        "booked_on": "2026-04-03",
+        "counterparty_reference": "SYN-COUNTERPARTY-001",
+        "currency": "CNY",
+        "purchase_order_id": "PO-001",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-001"
+      },
+      {
+        "amount_minor": 319633,
+        "booked_on": "2026-04-10",
+        "counterparty_reference": "SYN-COUNTERPARTY-002",
+        "currency": "CNY",
+        "purchase_order_id": "PO-001",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-002"
+      },
+      {
+        "amount_minor": 319634,
+        "booked_on": "2026-04-17",
+        "counterparty_reference": "SYN-COUNTERPARTY-003",
+        "currency": "CNY",
+        "purchase_order_id": "PO-001",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-003"
+      },
+      {
+        "amount_minor": 84533,
+        "booked_on": "2026-04-24",
+        "counterparty_reference": "SYN-COUNTERPARTY-004",
+        "currency": "CNY",
+        "purchase_order_id": "PO-002",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-004"
+      },
+      {
+        "amount_minor": 84533,
+        "booked_on": "2026-05-01",
+        "counterparty_reference": "SYN-COUNTERPARTY-005",
+        "currency": "CNY",
+        "purchase_order_id": "PO-002",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-005"
+      },
+      {
+        "amount_minor": 84534,
+        "booked_on": "2026-05-08",
+        "counterparty_reference": "SYN-COUNTERPARTY-006",
+        "currency": "CNY",
+        "purchase_order_id": "PO-002",
+        "status": "settled",
+        "supplier_id": "SUP-001",
+        "transaction_id": "TXN-006"
+      },
+      {
+        "amount_minor": 4580750,
+        "booked_on": "2026-02-03",
+        "counterparty_reference": "SYN-COUNTERPARTY-007",
+        "currency": "CNY",
+        "purchase_order_id": "PO-003",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-007"
+      },
+      {
+        "amount_minor": 4580750,
+        "booked_on": "2026-02-10",
+        "counterparty_reference": "SYN-COUNTERPARTY-008",
+        "currency": "CNY",
+        "purchase_order_id": "PO-003",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-008"
+      },
+      {
+        "amount_minor": 4580750,
+        "booked_on": "2026-02-17",
+        "counterparty_reference": "SYN-COUNTERPARTY-009",
+        "currency": "CNY",
+        "purchase_order_id": "PO-003",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-009"
+      },
+      {
+        "amount_minor": 6523550,
+        "booked_on": "2026-04-02",
+        "counterparty_reference": "SYN-COUNTERPARTY-010",
+        "currency": "CNY",
+        "purchase_order_id": "PO-004",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-010"
+      },
+      {
+        "amount_minor": 6523550,
+        "booked_on": "2026-04-09",
+        "counterparty_reference": "SYN-COUNTERPARTY-011",
+        "currency": "CNY",
+        "purchase_order_id": "PO-004",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-011"
+      },
+      {
+        "amount_minor": 6523550,
+        "booked_on": "2026-04-16",
+        "counterparty_reference": "SYN-COUNTERPARTY-012",
+        "currency": "CNY",
+        "purchase_order_id": "PO-004",
+        "status": "settled",
+        "supplier_id": "SUP-002",
+        "transaction_id": "TXN-012"
+      },
+      {
+        "amount_minor": 343933,
+        "booked_on": "2026-04-04",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-005",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-013"
+      },
+      {
+        "amount_minor": 343933,
+        "booked_on": "2026-04-11",
+        "counterparty_reference": "SYN-COUNTERPARTY-014",
+        "currency": "CNY",
+        "purchase_order_id": "PO-005",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-014"
+      },
+      {
+        "amount_minor": 343934,
+        "booked_on": "2026-04-18",
+        "counterparty_reference": "SYN-COUNTERPARTY-015",
+        "currency": "CNY",
+        "purchase_order_id": "PO-005",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-015"
+      },
+      {
+        "amount_minor": 161966,
+        "booked_on": "2026-02-16",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-006",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-016"
+      },
+      {
+        "amount_minor": 161966,
+        "booked_on": "2026-02-23",
+        "counterparty_reference": "SYN-COUNTERPARTY-017",
+        "currency": "CNY",
+        "purchase_order_id": "PO-006",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-017"
+      },
+      {
+        "amount_minor": 161968,
+        "booked_on": "2026-03-02",
+        "counterparty_reference": "SYN-COUNTERPARTY-018",
+        "currency": "CNY",
+        "purchase_order_id": "PO-006",
+        "status": "settled",
+        "supplier_id": "SUP-003",
+        "transaction_id": "TXN-018"
+      },
+      {
+        "amount_minor": 156500,
+        "booked_on": "2026-04-21",
+        "counterparty_reference": "SYN-COUNTERPARTY-019",
+        "currency": "USD",
+        "purchase_order_id": "PO-007",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-019"
+      },
+      {
+        "amount_minor": 156500,
+        "booked_on": "2026-04-28",
+        "counterparty_reference": "SYN-COUNTERPARTY-020",
+        "currency": "USD",
+        "purchase_order_id": "PO-007",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-020"
+      },
+      {
+        "amount_minor": 156500,
+        "booked_on": "2026-05-05",
+        "counterparty_reference": "SYN-COUNTERPARTY-021",
+        "currency": "USD",
+        "purchase_order_id": "PO-007",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-021"
+      },
+      {
+        "amount_minor": 224800,
+        "booked_on": "2026-02-18",
+        "counterparty_reference": "SYN-COUNTERPARTY-022",
+        "currency": "USD",
+        "purchase_order_id": "PO-008",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-022"
+      },
+      {
+        "amount_minor": 224800,
+        "booked_on": "2026-02-25",
+        "counterparty_reference": "SYN-COUNTERPARTY-023",
+        "currency": "USD",
+        "purchase_order_id": "PO-008",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-023"
+      },
+      {
+        "amount_minor": 224800,
+        "booked_on": "2026-03-04",
+        "counterparty_reference": "SYN-COUNTERPARTY-024",
+        "currency": "USD",
+        "purchase_order_id": "PO-008",
+        "status": "settled",
+        "supplier_id": "SUP-004",
+        "transaction_id": "TXN-024"
+      },
+      {
+        "amount_minor": 255100,
+        "booked_on": "2026-04-13",
+        "counterparty_reference": "SYN-COUNTERPARTY-025",
+        "currency": "CNY",
+        "purchase_order_id": "PO-009",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-025"
+      },
+      {
+        "amount_minor": 255100,
+        "booked_on": "2026-04-20",
+        "counterparty_reference": "SYN-COUNTERPARTY-026",
+        "currency": "CNY",
+        "purchase_order_id": "PO-009",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-026"
+      },
+      {
+        "amount_minor": 255100,
+        "booked_on": "2026-04-27",
+        "counterparty_reference": "SYN-COUNTERPARTY-027",
+        "currency": "CNY",
+        "purchase_order_id": "PO-009",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-027"
+      },
+      {
+        "amount_minor": 375233,
+        "booked_on": "2026-04-29",
+        "counterparty_reference": "SYN-COUNTERPARTY-028",
+        "currency": "CNY",
+        "purchase_order_id": "PO-010",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-028"
+      },
+      {
+        "amount_minor": 375233,
+        "booked_on": "2026-05-06",
+        "counterparty_reference": "SYN-COUNTERPARTY-029",
+        "currency": "CNY",
+        "purchase_order_id": "PO-010",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-029"
+      },
+      {
+        "amount_minor": 375234,
+        "booked_on": "2026-05-13",
+        "counterparty_reference": "SYN-COUNTERPARTY-030",
+        "currency": "CNY",
+        "purchase_order_id": "PO-010",
+        "status": "settled",
+        "supplier_id": "SUP-005",
+        "transaction_id": "TXN-030"
+      },
+      {
+        "amount_minor": 3594500,
+        "booked_on": "2026-02-09",
+        "counterparty_reference": "SYN-COUNTERPARTY-031",
+        "currency": "CNY",
+        "purchase_order_id": "PO-011",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-031"
+      },
+      {
+        "amount_minor": 3594500,
+        "booked_on": "2026-02-16",
+        "counterparty_reference": "SYN-COUNTERPARTY-032",
+        "currency": "CNY",
+        "purchase_order_id": "PO-011",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-032"
+      },
+      {
+        "amount_minor": 3594500,
+        "booked_on": "2026-02-23",
+        "counterparty_reference": "SYN-COUNTERPARTY-033",
+        "currency": "CNY",
+        "purchase_order_id": "PO-011",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-033"
+      },
+      {
+        "amount_minor": 3361550,
+        "booked_on": "2026-02-28",
+        "counterparty_reference": "SYN-COUNTERPARTY-034",
+        "currency": "CNY",
+        "purchase_order_id": "PO-012",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-034"
+      },
+      {
+        "amount_minor": 3361550,
+        "booked_on": "2026-03-07",
+        "counterparty_reference": "SYN-COUNTERPARTY-035",
+        "currency": "CNY",
+        "purchase_order_id": "PO-012",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-035"
+      },
+      {
+        "amount_minor": 3361550,
+        "booked_on": "2026-03-14",
+        "counterparty_reference": "SYN-COUNTERPARTY-036",
+        "currency": "CNY",
+        "purchase_order_id": "PO-012",
+        "status": "settled",
+        "supplier_id": "SUP-006",
+        "transaction_id": "TXN-036"
+      },
+      {
+        "amount_minor": 106100,
+        "booked_on": "2026-01-11",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-013",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-037"
+      },
+      {
+        "amount_minor": 106100,
+        "booked_on": "2026-01-18",
+        "counterparty_reference": "SYN-COUNTERPARTY-038",
+        "currency": "CNY",
+        "purchase_order_id": "PO-013",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-038"
+      },
+      {
+        "amount_minor": 106100,
+        "booked_on": "2026-01-25",
+        "counterparty_reference": "SYN-COUNTERPARTY-039",
+        "currency": "CNY",
+        "purchase_order_id": "PO-013",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-039"
+      },
+      {
+        "amount_minor": 321466,
+        "booked_on": "2026-03-19",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-014",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-040"
+      },
+      {
+        "amount_minor": 321466,
+        "booked_on": "2026-03-26",
+        "counterparty_reference": "SYN-COUNTERPARTY-041",
+        "currency": "CNY",
+        "purchase_order_id": "PO-014",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-041"
+      },
+      {
+        "amount_minor": 321468,
+        "booked_on": "2026-04-02",
+        "counterparty_reference": "SYN-COUNTERPARTY-042",
+        "currency": "CNY",
+        "purchase_order_id": "PO-014",
+        "status": "settled",
+        "supplier_id": "SUP-007",
+        "transaction_id": "TXN-042"
+      },
+      {
+        "amount_minor": 175433,
+        "booked_on": "2026-02-13",
+        "counterparty_reference": "SYN-COUNTERPARTY-043",
+        "currency": "USD",
+        "purchase_order_id": "PO-015",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-043"
+      },
+      {
+        "amount_minor": 175433,
+        "booked_on": "2026-02-20",
+        "counterparty_reference": "SYN-COUNTERPARTY-044",
+        "currency": "USD",
+        "purchase_order_id": "PO-015",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-044"
+      },
+      {
+        "amount_minor": 175434,
+        "booked_on": "2026-02-27",
+        "counterparty_reference": "SYN-COUNTERPARTY-045",
+        "currency": "USD",
+        "purchase_order_id": "PO-015",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-045"
+      },
+      {
+        "amount_minor": 397233,
+        "booked_on": "2026-01-21",
+        "counterparty_reference": "SYN-COUNTERPARTY-046",
+        "currency": "USD",
+        "purchase_order_id": "PO-016",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-046"
+      },
+      {
+        "amount_minor": 397233,
+        "booked_on": "2026-01-28",
+        "counterparty_reference": "SYN-COUNTERPARTY-047",
+        "currency": "USD",
+        "purchase_order_id": "PO-016",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-047"
+      },
+      {
+        "amount_minor": 397234,
+        "booked_on": "2026-02-04",
+        "counterparty_reference": "SYN-COUNTERPARTY-048",
+        "currency": "USD",
+        "purchase_order_id": "PO-016",
+        "status": "settled",
+        "supplier_id": "SUP-008",
+        "transaction_id": "TXN-048"
+      },
+      {
+        "amount_minor": 86933,
+        "booked_on": "2026-01-12",
+        "counterparty_reference": "SYN-COUNTERPARTY-049",
+        "currency": "CNY",
+        "purchase_order_id": "PO-017",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-049"
+      },
+      {
+        "amount_minor": 86933,
+        "booked_on": "2026-01-19",
+        "counterparty_reference": "SYN-COUNTERPARTY-050",
+        "currency": "CNY",
+        "purchase_order_id": "PO-017",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-050"
+      },
+      {
+        "amount_minor": 86934,
+        "booked_on": "2026-01-26",
+        "counterparty_reference": "SYN-COUNTERPARTY-051",
+        "currency": "CNY",
+        "purchase_order_id": "PO-017",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-051"
+      },
+      {
+        "amount_minor": 144833,
+        "booked_on": "2026-04-26",
+        "counterparty_reference": "SYN-COUNTERPARTY-052",
+        "currency": "CNY",
+        "purchase_order_id": "PO-018",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-052"
+      },
+      {
+        "amount_minor": 144833,
+        "booked_on": "2026-05-03",
+        "counterparty_reference": "SYN-COUNTERPARTY-053",
+        "currency": "CNY",
+        "purchase_order_id": "PO-018",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-053"
+      },
+      {
+        "amount_minor": 144834,
+        "booked_on": "2026-05-10",
+        "counterparty_reference": "SYN-COUNTERPARTY-054",
+        "currency": "CNY",
+        "purchase_order_id": "PO-018",
+        "status": "settled",
+        "supplier_id": "SUP-009",
+        "transaction_id": "TXN-054"
+      },
+      {
+        "amount_minor": 3362450,
+        "booked_on": "2026-03-14",
+        "counterparty_reference": "SYN-COUNTERPARTY-055",
+        "currency": "CNY",
+        "purchase_order_id": "PO-019",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-055"
+      },
+      {
+        "amount_minor": 3362450,
+        "booked_on": "2026-03-21",
+        "counterparty_reference": "SYN-COUNTERPARTY-056",
+        "currency": "CNY",
+        "purchase_order_id": "PO-019",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-056"
+      },
+      {
+        "amount_minor": 3362450,
+        "booked_on": "2026-03-28",
+        "counterparty_reference": "SYN-COUNTERPARTY-057",
+        "currency": "CNY",
+        "purchase_order_id": "PO-019",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-057"
+      },
+      {
+        "amount_minor": 6571900,
+        "booked_on": "2026-04-13",
+        "counterparty_reference": "SYN-COUNTERPARTY-058",
+        "currency": "CNY",
+        "purchase_order_id": "PO-020",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-058"
+      },
+      {
+        "amount_minor": 6571900,
+        "booked_on": "2026-04-20",
+        "counterparty_reference": "SYN-COUNTERPARTY-059",
+        "currency": "CNY",
+        "purchase_order_id": "PO-020",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-059"
+      },
+      {
+        "amount_minor": 6571900,
+        "booked_on": "2026-04-27",
+        "counterparty_reference": "SYN-COUNTERPARTY-060",
+        "currency": "CNY",
+        "purchase_order_id": "PO-020",
+        "status": "settled",
+        "supplier_id": "SUP-010",
+        "transaction_id": "TXN-060"
+      },
+      {
+        "amount_minor": 105100,
+        "booked_on": "2026-02-13",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-021",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-061"
+      },
+      {
+        "amount_minor": 105100,
+        "booked_on": "2026-02-20",
+        "counterparty_reference": "SYN-COUNTERPARTY-062",
+        "currency": "CNY",
+        "purchase_order_id": "PO-021",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-062"
+      },
+      {
+        "amount_minor": 105100,
+        "booked_on": "2026-02-27",
+        "counterparty_reference": "SYN-COUNTERPARTY-063",
+        "currency": "CNY",
+        "purchase_order_id": "PO-021",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-063"
+      },
+      {
+        "amount_minor": 272133,
+        "booked_on": "2026-04-07",
+        "counterparty_reference": null,
+        "currency": "CNY",
+        "purchase_order_id": "PO-022",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-064"
+      },
+      {
+        "amount_minor": 272133,
+        "booked_on": "2026-04-14",
+        "counterparty_reference": "SYN-COUNTERPARTY-065",
+        "currency": "CNY",
+        "purchase_order_id": "PO-022",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-065"
+      },
+      {
+        "amount_minor": 272134,
+        "booked_on": "2026-04-21",
+        "counterparty_reference": "SYN-COUNTERPARTY-066",
+        "currency": "CNY",
+        "purchase_order_id": "PO-022",
+        "status": "settled",
+        "supplier_id": "SUP-011",
+        "transaction_id": "TXN-066"
+      },
+      {
+        "amount_minor": 184700,
+        "booked_on": "2026-04-30",
+        "counterparty_reference": "SYN-COUNTERPARTY-067",
+        "currency": "USD",
+        "purchase_order_id": "PO-023",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-067"
+      },
+      {
+        "amount_minor": 184700,
+        "booked_on": "2026-05-07",
+        "counterparty_reference": "SYN-COUNTERPARTY-068",
+        "currency": "USD",
+        "purchase_order_id": "PO-023",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-068"
+      },
+      {
+        "amount_minor": 184700,
+        "booked_on": "2026-05-14",
+        "counterparty_reference": "SYN-COUNTERPARTY-069",
+        "currency": "USD",
+        "purchase_order_id": "PO-023",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-069"
+      },
+      {
+        "amount_minor": 78133,
+        "booked_on": "2026-03-21",
+        "counterparty_reference": "SYN-COUNTERPARTY-070",
+        "currency": "USD",
+        "purchase_order_id": "PO-024",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-070"
+      },
+      {
+        "amount_minor": 78133,
+        "booked_on": "2026-03-28",
+        "counterparty_reference": "SYN-COUNTERPARTY-071",
+        "currency": "USD",
+        "purchase_order_id": "PO-024",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-071"
+      },
+      {
+        "amount_minor": 78134,
+        "booked_on": "2026-04-04",
+        "counterparty_reference": "SYN-COUNTERPARTY-072",
+        "currency": "USD",
+        "purchase_order_id": "PO-024",
+        "status": "settled",
+        "supplier_id": "SUP-012",
+        "transaction_id": "TXN-072"
+      }
+    ],
+    "purchase_orders": [
+      {
+        "amount_minor": 958900,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-001",
+        "currency": "CNY",
+        "invoice_amount_minor": 958900,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-27",
+        "purchase_order_id": "PO-001",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-001"
+      },
+      {
+        "amount_minor": 253600,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-002",
+        "currency": "CNY",
+        "invoice_amount_minor": 253600,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-04-17",
+        "purchase_order_id": "PO-002",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-001"
+      },
+      {
+        "amount_minor": 9161500,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-003",
+        "currency": "CNY",
+        "invoice_amount_minor": 9161500,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-01-27",
+        "purchase_order_id": "PO-003",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-002"
+      },
+      {
+        "amount_minor": 13047100,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-004",
+        "currency": "CNY",
+        "invoice_amount_minor": 13047100,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-26",
+        "purchase_order_id": "PO-004",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-002"
+      },
+      {
+        "amount_minor": 1031800,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 1031800,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-28",
+        "purchase_order_id": "PO-005",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-003"
+      },
+      {
+        "amount_minor": 485900,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 485900,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-02-09",
+        "purchase_order_id": "PO-006",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-003"
+      },
+      {
+        "amount_minor": 469500,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-007",
+        "currency": "CNY",
+        "invoice_amount_minor": 513600,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-04-14",
+        "purchase_order_id": "PO-007",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-004"
+      },
+      {
+        "amount_minor": 674400,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-008",
+        "currency": "CNY",
+        "invoice_amount_minor": 717300,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-02-11",
+        "purchase_order_id": "PO-008",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-004"
+      },
+      {
+        "amount_minor": 765300,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-009",
+        "currency": "CNY",
+        "invoice_amount_minor": 765300,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-04-06",
+        "purchase_order_id": "PO-009",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-005"
+      },
+      {
+        "amount_minor": 1125700,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-010",
+        "currency": "CNY",
+        "invoice_amount_minor": 1125700,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-04-22",
+        "purchase_order_id": "PO-010",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-005"
+      },
+      {
+        "amount_minor": 7189000,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-011",
+        "currency": "CNY",
+        "invoice_amount_minor": 7189000,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-02-02",
+        "purchase_order_id": "PO-011",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-006"
+      },
+      {
+        "amount_minor": 6723100,
+        "competitive_quote_count": 4,
+        "contract_reference": "SYN-CONTRACT-012",
+        "currency": "CNY",
+        "invoice_amount_minor": 6723100,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-02-21",
+        "purchase_order_id": "PO-012",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-006"
+      },
+      {
+        "amount_minor": 318300,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 318300,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-01-04",
+        "purchase_order_id": "PO-013",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-007"
+      },
+      {
+        "amount_minor": 964400,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 964400,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-12",
+        "purchase_order_id": "PO-014",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-007"
+      },
+      {
+        "amount_minor": 526300,
+        "competitive_quote_count": 4,
+        "contract_reference": "SYN-CONTRACT-015",
+        "currency": "CNY",
+        "invoice_amount_minor": 551400,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-02-06",
+        "purchase_order_id": "PO-015",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-008"
+      },
+      {
+        "amount_minor": 1191700,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-016",
+        "currency": "CNY",
+        "invoice_amount_minor": 1220700,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-01-14",
+        "purchase_order_id": "PO-016",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-008"
+      },
+      {
+        "amount_minor": 260800,
+        "competitive_quote_count": 3,
+        "contract_reference": "SYN-CONTRACT-017",
+        "currency": "CNY",
+        "invoice_amount_minor": 260800,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-01-05",
+        "purchase_order_id": "PO-017",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-009"
+      },
+      {
+        "amount_minor": 434500,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-018",
+        "currency": "CNY",
+        "invoice_amount_minor": 434500,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-04-19",
+        "purchase_order_id": "PO-018",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-009"
+      },
+      {
+        "amount_minor": 6724900,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-019",
+        "currency": "CNY",
+        "invoice_amount_minor": 6724900,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-07",
+        "purchase_order_id": "PO-019",
+        "requesting_unit": "Synthetic Facilities",
+        "status": "pending_review",
+        "supplier_id": "SUP-010"
+      },
+      {
+        "amount_minor": 13143800,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-020",
+        "currency": "CNY",
+        "invoice_amount_minor": 13143800,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-04-06",
+        "purchase_order_id": "PO-020",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-010"
+      },
+      {
+        "amount_minor": 315300,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 315300,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-02-06",
+        "purchase_order_id": "PO-021",
+        "requesting_unit": "Synthetic Operations",
+        "status": "pending_review",
+        "supplier_id": "SUP-011"
+      },
+      {
+        "amount_minor": 816400,
+        "competitive_quote_count": null,
+        "contract_reference": null,
+        "currency": "CNY",
+        "invoice_amount_minor": 816400,
+        "invoice_currency": "CNY",
+        "ordered_on": "2026-03-31",
+        "purchase_order_id": "PO-022",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-011"
+      },
+      {
+        "amount_minor": 554100,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-023",
+        "currency": "CNY",
+        "invoice_amount_minor": 576600,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-04-23",
+        "purchase_order_id": "PO-023",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-012"
+      },
+      {
+        "amount_minor": 234400,
+        "competitive_quote_count": 5,
+        "contract_reference": "SYN-CONTRACT-024",
+        "currency": "CNY",
+        "invoice_amount_minor": 257000,
+        "invoice_currency": "USD",
+        "ordered_on": "2026-03-14",
+        "purchase_order_id": "PO-024",
+        "requesting_unit": "Synthetic IT",
+        "status": "pending_review",
+        "supplier_id": "SUP-012"
+      }
+    ],
+    "seed": 20260830,
+    "suppliers": [
+      {
+        "display_name": "Synthetic Supplier 01",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2024-04-26",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-001",
+        "tax_identifier": "SYN-TAX-001"
+      },
+      {
+        "display_name": "Synthetic Supplier 02",
+        "due_diligence_status": "expired",
+        "jurisdiction": "CN-31",
+        "onboarded_on": "2024-10-04",
+        "procurement_status": "blocked",
+        "registry_status": "suspended",
+        "risk_signals": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired"
+        ],
+        "sanctions_screening": "potential_match",
+        "supplier_id": "SUP-002",
+        "tax_identifier": "SYN-TAX-002"
+      },
+      {
+        "display_name": "Synthetic Supplier 03",
+        "due_diligence_status": "missing",
+        "jurisdiction": "CN-31",
+        "onboarded_on": "2025-02-04",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [
+          "tax_identifier_missing",
+          "due_diligence_missing"
+        ],
+        "sanctions_screening": "unknown",
+        "supplier_id": "SUP-003",
+        "tax_identifier": null
+      },
+      {
+        "display_name": "Synthetic Supplier 04",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-44",
+        "onboarded_on": "2025-01-22",
+        "procurement_status": "blocked",
+        "registry_status": "active",
+        "risk_signals": [
+          "supplier_status_conflict"
+        ],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-004",
+        "tax_identifier": "SYN-TAX-004"
+      },
+      {
+        "display_name": "Synthetic Supplier 05",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2024-06-04",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-005",
+        "tax_identifier": "SYN-TAX-005"
+      },
+      {
+        "display_name": "Synthetic Supplier 06",
+        "due_diligence_status": "expired",
+        "jurisdiction": "CN-44",
+        "onboarded_on": "2024-07-12",
+        "procurement_status": "blocked",
+        "registry_status": "suspended",
+        "risk_signals": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired"
+        ],
+        "sanctions_screening": "potential_match",
+        "supplier_id": "SUP-006",
+        "tax_identifier": "SYN-TAX-006"
+      },
+      {
+        "display_name": "Synthetic Supplier 07",
+        "due_diligence_status": "missing",
+        "jurisdiction": "CN-44",
+        "onboarded_on": "2025-02-09",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [
+          "tax_identifier_missing",
+          "due_diligence_missing"
+        ],
+        "sanctions_screening": "unknown",
+        "supplier_id": "SUP-007",
+        "tax_identifier": null
+      },
+      {
+        "display_name": "Synthetic Supplier 08",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2024-01-02",
+        "procurement_status": "blocked",
+        "registry_status": "active",
+        "risk_signals": [
+          "supplier_status_conflict"
+        ],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-008",
+        "tax_identifier": "SYN-TAX-008"
+      },
+      {
+        "display_name": "Synthetic Supplier 09",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2025-02-28",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-009",
+        "tax_identifier": "SYN-TAX-009"
+      },
+      {
+        "display_name": "Synthetic Supplier 10",
+        "due_diligence_status": "expired",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2024-09-27",
+        "procurement_status": "blocked",
+        "registry_status": "suspended",
+        "risk_signals": [
+          "sanctions_potential_match",
+          "supplier_blocked",
+          "due_diligence_expired"
+        ],
+        "sanctions_screening": "potential_match",
+        "supplier_id": "SUP-010",
+        "tax_identifier": "SYN-TAX-010"
+      },
+      {
+        "display_name": "Synthetic Supplier 11",
+        "due_diligence_status": "missing",
+        "jurisdiction": "CN-11",
+        "onboarded_on": "2024-07-25",
+        "procurement_status": "approved",
+        "registry_status": "active",
+        "risk_signals": [
+          "tax_identifier_missing",
+          "due_diligence_missing"
+        ],
+        "sanctions_screening": "unknown",
+        "supplier_id": "SUP-011",
+        "tax_identifier": null
+      },
+      {
+        "display_name": "Synthetic Supplier 12",
+        "due_diligence_status": "verified",
+        "jurisdiction": "CN-31",
+        "onboarded_on": "2024-11-11",
+        "procurement_status": "blocked",
+        "registry_status": "active",
+        "risk_signals": [
+          "supplier_status_conflict"
+        ],
+        "sanctions_screening": "clear",
+        "supplier_id": "SUP-012",
+        "tax_identifier": "SYN-TAX-012"
+      }
+    ]
+  },
+  "payload_canonicalization": "utf8-json-sort-keys-compact-with-one-trailing-lf.v1",
+  "payload_sha256": "8f224d67342dc6ed45de404a7cd0c2f4c8de4b56f825752491d689cd6c12c6b6"
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "rules_version": "2.0.0",
+  "risk_categories": [
+    "policy_compliance",
+    "contract_terms",
+    "procurement_anomaly",
+    "supplier_integrity",
+    "financial_exposure",
+    "data_quality"
+  ],
+  "risk_order": [
+    "unknown",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "required_finding_keys": [
+    "policy.required_policy_evidence",
+    "contract.required_terms",
+    "procurement.required_business_facts"
+  ],
+  "required_finding_contracts": {
+    "policy.required_policy_evidence": {
+      "worker": "policy",
+      "category": "policy_compliance",
+      "evidence_kind": "evidence_ref"
+    },
+    "contract.required_terms": {
+      "worker": "contract",
+      "category": "contract_terms",
+      "evidence_kind": "evidence_ref"
+    },
+    "procurement.required_business_facts": {
+      "worker": "procurement_data",
+      "category": "procurement_anomaly",
+      "evidence_kind": "business_fact"
+    }
+  },
+  "fail_closed_finding_statuses": [
+    "unknown",
+    "insufficient_evidence",
+    "upstream_failure",
+    "invalid_input"
+  ],
+  "recommendation_by_highest_risk": {
+    "unknown": "insufficient_information",
+    "low": "recommend_approve",
+    "medium": "recommend_conditional",
+    "high": "recommend_reject",
+    "critical": "recommend_reject"
+  },
+  "conflict_assertions": [
+    "risk_present",
+    "risk_absent"
+  ],
+  "conflict_minimum_risk": "high",
+  "conflict_recommendation": "needs_human_review",
+  "incomplete_recommendation": "insufficient_information",
+  "gate_mode": "directional",
+  "conflict_anchors": [
+    "finding_key",
+    "evidence_ref",
+    "business_fact"
+  ],
+  "coverage_required_recommendations": [
+    "recommend_approve",
+    "recommend_conditional"
+  ],
+  "escalation_precedence": [
+    "conflict",
+    "pipeline",
+    "evidence"
+  ]
+}

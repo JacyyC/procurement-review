@@ -1,0 +1,57 @@
+# Local configuration; only reviewed examples are public.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.token
+*.secret
+*.pem
+*.key
+.npmrc
+.pypirc
+
+# Runtime data and private tooling.
+/.release-private/
+/.release-validation/
+/data/
+logs/
+.run/
+.local/
+.idea/
+.vscode/
+.claude/
+.codex/
+.trae/
+.DS_Store
+*.log
+*.har
+*.db
+*.db-*
+*.sqlite*
+*.dump
+*.sql.gz
+
+# Dependencies, generated output, caches.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+*.egg-info/
+
+# Historical development evidence is not a public source artifact.
+/agent-workspace/
+/workspace/
+**/ui-02-evidence/
+**/ui-03-evidence/

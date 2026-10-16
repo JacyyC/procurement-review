@@ -1,0 +1,512 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "procurement-public-sources-v1",
+  "record_count": 24,
+  "records_sha256": "e1f778899e167b8fbb6a964bab88cca49bbe8466ab444c7566aff0b2d074bcc2",
+  "records": [
+    {
+      "source_id": "ca-government-contracts-regulations",
+      "source_url": "https://laws-lois.justice.gc.ca/PDF/SOR-87-402.pdf",
+      "title": "Government Contracts Regulations",
+      "publisher": "Department of Justice Canada",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "conditional_reuse",
+      "license_note": "The Justice Laws Website permits reproduction subject to stated accuracy, currency, and non-official-status conditions; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SOR/87-402, consolidated PDF current at retrieval",
+      "retrieved_at": "2026-08-30T15:12:05Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://laws-lois.justice.gc.ca/PDF/SOR-87-402.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 389992,
+      "sha256": "14448b6b1cde64ba0ff1beee5b17fae6ddb1eeeb290d582405e2f2760bc7bc07",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "ca-procurement-ombudsman-regulations",
+      "source_url": "https://laws-lois.justice.gc.ca/PDF/SOR-2008-143.pdf",
+      "title": "Procurement Ombudsman Regulations",
+      "publisher": "Department of Justice Canada",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "conditional_reuse",
+      "license_note": "The Justice Laws Website permits reproduction subject to stated accuracy, currency, and non-official-status conditions; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SOR/2008-143, consolidated PDF current at retrieval",
+      "retrieved_at": "2026-08-30T15:13:34Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://laws-lois.justice.gc.ca/PDF/SOR-2008-143.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 394037,
+      "sha256": "070724c5be6975854f41a861c2922a20cc4a594bfbc25d148dc18f31b2a0028d",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "ca-public-works-government-services-act",
+      "source_url": "https://laws-lois.justice.gc.ca/PDF/P-38.2.pdf",
+      "title": "Department of Public Works and Government Services Act",
+      "publisher": "Department of Justice Canada",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "conditional_reuse",
+      "license_note": "The Justice Laws Website permits reproduction subject to stated accuracy, currency, and non-official-status conditions; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "S.C. 1996, c. 16, consolidated PDF current at retrieval",
+      "retrieved_at": "2026-08-30T15:15:22Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://laws-lois.justice.gc.ca/PDF/P-38.2.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 361739,
+      "sha256": "c4703262f2f1fc19d3a71475789d17b2f8131d7dd33a530009cea2a22860ac55",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2009-81",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32009L0081",
+      "title": "Directive 2009/81/EC on defence and security procurement",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2009-07-13",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32009L0081, English PDF",
+      "retrieved_at": "2026-08-30T15:08:14Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32009L0081"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1589287,
+      "sha256": "cdfe1c79f90aa00eb07a7d437627db67af108cfa0056966f6121d0c4b320cd87",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2014-23",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0023",
+      "title": "Directive 2014/23/EU on the award of concession contracts",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2014-02-26",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32014L0023, English PDF",
+      "retrieved_at": "2026-08-30T15:07:33Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0023"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1292782,
+      "sha256": "f6c151ce46115ce95b4880880f2190560b6e3a3ce6adf4a15b36aed7bf893090",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2014-24",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0024",
+      "title": "Directive 2014/24/EU on public procurement",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2014-02-26",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32014L0024, English PDF",
+      "retrieved_at": "2026-08-30T15:07:43Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0024"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 2344204,
+      "sha256": "d201220851583d0100b88a10fbefd1ea29ba411d38470ee58609f49ae5159b4b",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2014-25",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0025",
+      "title": "Directive 2014/25/EU on procurement by utilities entities",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2014-02-26",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32014L0025, English PDF",
+      "retrieved_at": "2026-08-30T15:08:02Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0025"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1848047,
+      "sha256": "36bf0b6ad0d3fde7597225c5cea92dcbdc7827de5bf752dae9e19d415c5645ec",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2014-55",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0055",
+      "title": "Directive 2014/55/EU on electronic invoicing in public procurement",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2014-04-16",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32014L0055, English PDF",
+      "retrieved_at": "2026-08-30T15:08:46Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0055"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 390926,
+      "sha256": "c0ba0ddb5160fb89d74efa1653f98e01315a83aac01c8b1a0b57c4cef382a36a",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-2019-1161",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019L1161",
+      "title": "Directive (EU) 2019/1161 on clean and energy-efficient road transport vehicles",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2019-06-20",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32019L1161, English PDF",
+      "retrieved_at": "2026-08-30T15:09:29Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019L1161"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 471031,
+      "sha256": "525f054e1adda1f8e1de5a54acc64398f3338d5d3c8a905d85d1df725d30873d",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-89-665",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:31989L0665",
+      "title": "Council Directive 89/665/EEC on public procurement review procedures",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "1989-12-21",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 31989L0665, English PDF",
+      "retrieved_at": "2026-08-30T15:09:07Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:31989L0665"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 390975,
+      "sha256": "79360fdc92a41f8e2fd86daa5e1bf24248cb87d38cf3b04bc159898860772aaa",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-directive-92-13",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:31992L0013",
+      "title": "Council Directive 92/13/EEC on utilities procurement review procedures",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "1992-02-25",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 31992L0013, English PDF",
+      "retrieved_at": "2026-08-30T15:09:14Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:31992L0013"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 775736,
+      "sha256": "d79f523b74c0a0817cff76ce28a8ce402263c9058410e89a58816659b9df2380",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2007-1370",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32007R1370",
+      "title": "Regulation (EC) No 1370/2007 on public passenger transport services",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2007-10-23",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32007R1370, English PDF",
+      "retrieved_at": "2026-08-30T15:09:20Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32007R1370"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 108377,
+      "sha256": "1043c1b136e84f30c456d13cc767b8e93ff995a2331240494fdd4a3c54837aea",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2016-7",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0007",
+      "title": "Implementing Regulation (EU) 2016/7 establishing the European Single Procurement Document form",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2016-01-05",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32016R0007, English PDF",
+      "retrieved_at": "2026-08-30T15:09:49Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0007"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1485779,
+      "sha256": "a1d32ddebdffe43131419ce223ff59d7b19da2034cbcb88efebb94ca4172e008",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2019-1780",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019R1780",
+      "title": "Implementing Regulation (EU) 2019/1780 establishing public procurement notice forms",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2019-09-23",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32019R1780, English PDF",
+      "retrieved_at": "2026-08-30T15:08:27Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019R1780"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1187744,
+      "sha256": "8816a2d601c4f1799402e2188744ad029095d6696e20d01a3ba356581c712811",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2022-1031",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1031",
+      "title": "Regulation (EU) 2022/1031 on access to Union public procurement and concessions markets",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2022-06-23",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32022R1031, English PDF",
+      "retrieved_at": "2026-08-30T15:09:02Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1031"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 652285,
+      "sha256": "2a85f9f51d842f8509a8c31e0b0f57019c5fcbd6e1f0a5643c8e8099aa2dbdb6",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2022-2303",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2303",
+      "title": "Implementing Regulation (EU) 2022/2303 amending public procurement notice forms",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2022-11-24",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32022R2303, English PDF",
+      "retrieved_at": "2026-08-30T15:08:40Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2303"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1926847,
+      "sha256": "922fc0dc047ceeb57dbb19300828cc3fd189bb5a2adb76c64dc8f1423863ba3a",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2022-2560",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2560",
+      "title": "Regulation (EU) 2022/2560 on foreign subsidies distorting the internal market",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2022-12-14",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32022R2560, English PDF",
+      "retrieved_at": "2026-08-30T15:08:53Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2560"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 1009987,
+      "sha256": "8dc5417f53931b6488be87263c64e7aff30a0f1d54cafb4468d2c6197b482469",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "eu-regulation-2023-2495",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R2495",
+      "title": "Delegated Regulation (EU) 2023/2495 amending public procurement thresholds",
+      "publisher": "Publications Office of the European Union",
+      "publication_date": "2023-11-15",
+      "publication_date_status": "known",
+      "license_status": "conditional_reuse",
+      "license_note": "EUR-Lex reuse is subject to the European Commission reuse decision and possible third-party rights; this baseline keeps source-only metadata.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "CELEX 32023R2495, English PDF",
+      "retrieved_at": "2026-08-30T15:09:57Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R2495"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 454987,
+      "sha256": "30f5a0e92f8f437de2a6751faf2d0ac5696c56a7bc20cfacfbc7bd8deab60a77",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "nz-government-procurement-rules-4e",
+      "source_url": "https://www.procurement.govt.nz/assets/procurement-property/documents/government-procurement-rules-4th-edition.pdf",
+      "title": "Government Procurement Rules: Rules for sustainable and inclusive procurement",
+      "publisher": "New Zealand Government Procurement",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "unclear",
+      "license_note": "Document-level redistribution terms were not independently cleared; this baseline keeps source-only metadata and acquisition instructions.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "Fourth edition",
+      "retrieved_at": "2026-08-30T15:16:25Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://www.procurement.govt.nz/assets/procurement-property/documents/government-procurement-rules-4th-edition.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 3842263,
+      "sha256": "4acd7183121af09e8adcbb398c3a2e358ff66058303a9660cef1c28fda7b2d7e",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "un-uncitral-model-law-procurement-2011",
+      "source_url": "https://uncitral.un.org/sites/uncitral.un.org/files/media-documents/uncitral/en/2011-model-law-on-public-procurement-e.pdf",
+      "title": "UNCITRAL Model Law on Public Procurement",
+      "publisher": "United Nations Commission on International Trade Law",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "unclear",
+      "license_note": "Document-level redistribution terms were not independently cleared; this baseline keeps source-only metadata and acquisition instructions.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "2011 Model Law, English PDF",
+      "retrieved_at": "2026-08-30T15:16:31Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://uncitral.un.org/sites/uncitral.un.org/files/media-documents/uncitral/en/2011-model-law-on-public-procurement-e.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 246898,
+      "sha256": "cc6a0d05126d5ec989d0e9d744d814229d8b884d55859b3f50ea682e2fd91e3d",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "us-gsa-sf1449-2021",
+      "source_url": "https://www.gsa.gov/system/files/SF1449-21.pdf",
+      "title": "Standard Form 1449: Solicitation/Contract/Order for Commercial Products and Commercial Services",
+      "publisher": "U.S. General Services Administration",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "public_domain",
+      "license_note": "U.S. federal standard form treated as a U.S. Government work; source-only handling is retained for this baseline.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SF1449-21",
+      "retrieved_at": "2026-08-30T15:07:21Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://www.gsa.gov/system/files/SF1449-21.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 772366,
+      "sha256": "2d725178981fb221c19b25a254e660d94231e7fb78934ea726fa7bbaf0247c7d",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "us-gsa-sf26-2022",
+      "source_url": "https://www.gsa.gov/system/files/SF26-22.pdf",
+      "title": "Standard Form 26: Award/Contract",
+      "publisher": "U.S. General Services Administration",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "public_domain",
+      "license_note": "U.S. federal standard form treated as a U.S. Government work; source-only handling is retained for this baseline.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SF26-22",
+      "retrieved_at": "2026-08-30T15:07:24Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://www.gsa.gov/system/files/SF26-22.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 752478,
+      "sha256": "03d34af8070b970ade43d5d1a60d25be8d2343fcc0d9b269474a1bd22f714675",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "us-gsa-sf30-2016c",
+      "source_url": "https://www.gsa.gov/system/files/SF30-16c.pdf",
+      "title": "Standard Form 30: Amendment of Solicitation/Modification of Contract",
+      "publisher": "U.S. General Services Administration",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "public_domain",
+      "license_note": "U.S. federal standard form treated as a U.S. Government work; source-only handling is retained for this baseline.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SF30-16c",
+      "retrieved_at": "2026-08-30T15:07:25Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://www.gsa.gov/system/files/SF30-16c.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 592927,
+      "sha256": "6e98a85076e713a83daf10e4098fab5a7157ffffd9759a97966ecf426af17fd4",
+      "repository_inclusion": false
+    },
+    {
+      "source_id": "us-gsa-sf33-2022",
+      "source_url": "https://www.gsa.gov/system/files/SF33-22.pdf",
+      "title": "Standard Form 33: Solicitation, Offer and Award",
+      "publisher": "U.S. General Services Administration",
+      "publication_date": null,
+      "publication_date_status": "unknown",
+      "license_status": "public_domain",
+      "license_note": "U.S. federal standard form treated as a U.S. Government work; source-only handling is retained for this baseline.",
+      "redistribution_conclusion": "Store metadata and reproducible acquisition instructions only; do not include or redistribute the source document in this repository.",
+      "version": "SF33-22",
+      "retrieved_at": "2026-08-30T15:07:23Z",
+      "acquisition": {
+        "method": "https_get",
+        "command": ["curl", "--max-time", "120", "--http1.1", "--fail", "--location", "--silent", "--show-error", "--header", "Accept-Encoding: identity", "--user-agent", "Mozilla/5.0 (compatible; ProcurementReviewBaseline/1.0; +https://example.invalid)", "--output", "{output}", "https://www.gsa.gov/system/files/SF33-22.pdf"]
+      },
+      "content_media_type": "application/pdf",
+      "byte_size": 782434,
+      "sha256": "5a99037b43f00fc336b552f531d562b1d56201eb2ffbef2edd51f8f24972c7d2",
+      "repository_inclusion": false
+    }
+  ]
+}

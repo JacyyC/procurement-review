@@ -1,0 +1,45 @@
+{
+  "schema_version": "retrieval-contract-fixture.v1",
+  "fixture_version": "retrieval-fixture-v1",
+  "test_only": true,
+  "index_version": "retrieval-index-v1",
+  "source_version": "Generated Retrieval Fixture, Version 1",
+  "documents": [
+    {
+      "source_id": "fixture-competition",
+      "content": "Competitive bidding is required above the procurement threshold."
+    },
+    {
+      "source_id": "fixture-sanctions",
+      "content": "A sanctions screening result must be reviewed before supplier onboarding."
+    },
+    {
+      "source_id": "fixture-contract",
+      "content": "Contracts should record payment terms and termination rights."
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "query-competition",
+      "query": "competitive bidding threshold",
+      "fake_vector_scores": {
+        "fixture-competition": 0.7,
+        "fixture-sanctions": 0.95
+      },
+      "expected_source_order": [
+        "fixture-competition",
+        "fixture-sanctions"
+      ]
+    },
+    {
+      "query_id": "query-sanctions",
+      "query": "sanctions supplier",
+      "fake_vector_scores": {
+        "fixture-sanctions": 0.8
+      },
+      "expected_source_order": [
+        "fixture-sanctions"
+      ]
+    }
+  ]
+}

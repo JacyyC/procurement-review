@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIX-04 production error-reporting probe</title>
+  </head>
+  <body>
+    <p id="probe-note">
+      这个页面只用于 FIX-04B 的生产构建浏览器探针：它导入产品自己的 root 选项与渲染边界，
+      故意触发 caught、uncaught 与 recoverable 三类渲染错误，并检查控制台是否泄露异常原文。
+      它不是产品入口，也不给正常应用增加任何故障开关。
+    </p>
+    <div id="caught"></div>
+    <div id="uncaught"></div>
+    <div id="recoverable"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

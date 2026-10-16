@@ -1,0 +1,417 @@
+{
+  "schema_version": "1.0",
+  "fixture_version": "security-fixture.v1",
+  "test_only": true,
+  "document_version": "security-document.v1",
+  "dataset_version": "security-procurement.v1",
+  "index_version": "security-index.v1",
+  "shared_documents": [
+    {
+      "document_id": "DOC-SHARED-001",
+      "source_id": "fixture-competition",
+      "category": "policy",
+      "content": "Synthetic shared reference (shared_fixture): competitive bidding is required above the procurement threshold. Marker SHARED-POLICY-001."
+    },
+    {
+      "document_id": "DOC-SHARED-002",
+      "source_id": "fixture-sanctions",
+      "category": "policy",
+      "content": "Synthetic shared reference (shared_fixture): a sanctions screening result must be reviewed before supplier onboarding. Marker SHARED-POLICY-002."
+    },
+    {
+      "document_id": "DOC-SHARED-003",
+      "source_id": "fixture-contract",
+      "category": "contract",
+      "content": "Synthetic shared reference (shared_fixture): contracts should record payment terms and termination rights. Marker SHARED-CONTRACT-003."
+    }
+  ],
+  "tenants": [
+    {
+      "tenant_id": "tenant-alpha",
+      "display_name": "Synthetic tenant alpha",
+      "subjects": [
+        {
+          "subject_id": "subject-alpha-reader",
+          "display_name": "Alpha reader",
+          "roles": [
+            "reader"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-ALPHA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-alpha-operator",
+          "display_name": "Alpha operator",
+          "roles": [
+            "operator"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-ALPHA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-alpha-approver",
+          "display_name": "Alpha approver",
+          "roles": [
+            "approver"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-ALPHA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-alpha-auditor",
+          "display_name": "Alpha auditor",
+          "roles": [
+            "auditor"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-ALPHA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-alpha-nogrant",
+          "display_name": "Alpha reader without a case grant",
+          "roles": [
+            "reader"
+          ],
+          "case_grants": []
+        },
+        {
+          "subject_id": "subject-alpha-disabled",
+          "display_name": "Alpha disabled operator",
+          "roles": [
+            "operator",
+            "approver"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-ALPHA-002"
+          ],
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "tenant_id": "tenant-beta",
+      "display_name": "Synthetic tenant beta",
+      "subjects": [
+        {
+          "subject_id": "subject-beta-reader",
+          "display_name": "Beta reader",
+          "roles": [
+            "reader"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-BETA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-beta-operator",
+          "display_name": "Beta operator",
+          "roles": [
+            "operator"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-BETA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-beta-approver",
+          "display_name": "Beta approver",
+          "roles": [
+            "approver"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-BETA-002"
+          ]
+        },
+        {
+          "subject_id": "subject-beta-auditor",
+          "display_name": "Beta auditor",
+          "roles": [
+            "auditor"
+          ],
+          "case_grants": [
+            "CASE-ALPHA-001",
+            "CASE-BETA-002"
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "tenant_id": "tenant-alpha",
+      "case_id": "CASE-ALPHA-001",
+      "label": "Alpha synthetic purchase order",
+      "case_type": "purchase_order",
+      "scenario": "low",
+      "purchase_order_id": "PO-901",
+      "case_version": "case-alpha-001.v1",
+      "documents": [
+        {
+          "document_id": "DOC-ALPHA-001",
+          "source_id": "SRC-ALPHA-001",
+          "category": "policy",
+          "content": "Synthetic case document tenant-alpha CASE-ALPHA-001: competitive bidding threshold evidence with marker ALPHA-CASE-ONE."
+        }
+      ],
+      "procurement": {
+        "orders": [
+          {
+            "record_id": "PO-901",
+            "payload": {
+              "purchase_order_id": "PO-901",
+              "supplier_id": "SUP-901",
+              "amount": 12500.0,
+              "currency": "CNY",
+              "marker": "ALPHA-ORDER-MARKER"
+            }
+          }
+        ],
+        "suppliers": [
+          {
+            "record_id": "SUP-901",
+            "payload": {
+              "supplier_id": "SUP-901",
+              "name": "Alpha synthetic supplier",
+              "sanctions_status": "clear",
+              "marker": "ALPHA-SUPPLIER-MARKER"
+            }
+          },
+          {
+            "record_id": "SUP-902",
+            "payload": {
+              "supplier_id": "SUP-902",
+              "name": "Alpha second synthetic supplier",
+              "sanctions_status": "review",
+              "marker": "ALPHA-SUPPLIER-TWO-MARKER"
+            }
+          }
+        ],
+        "transactions": [
+          {
+            "record_id": "TXN-901-A",
+            "payload": {
+              "transaction_id": "TXN-901-A",
+              "purchase_order_id": "PO-901",
+              "supplier_id": "SUP-901",
+              "amount": 12500.0,
+              "marker": "ALPHA-TXN-A-MARKER"
+            }
+          },
+          {
+            "record_id": "TXN-901-B",
+            "payload": {
+              "transaction_id": "TXN-901-B",
+              "purchase_order_id": "PO-901",
+              "supplier_id": "SUP-901",
+              "amount": 6400.0,
+              "marker": "ALPHA-TXN-B-MARKER"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tenant_id": "tenant-alpha",
+      "case_id": "CASE-ALPHA-002",
+      "label": "Alpha synthetic contract change",
+      "case_type": "contract_change",
+      "scenario": "high",
+      "purchase_order_id": "PO-902",
+      "case_version": "case-alpha-002.v1",
+      "documents": [
+        {
+          "document_id": "DOC-ALPHA-002",
+          "source_id": "SRC-ALPHA-002",
+          "category": "contract",
+          "content": "Synthetic case document tenant-alpha CASE-ALPHA-002: payment terms termination rights with marker ALPHA-CASE-TWO."
+        }
+      ],
+      "procurement": {
+        "orders": [
+          {
+            "record_id": "PO-902",
+            "payload": {
+              "purchase_order_id": "PO-902",
+              "supplier_id": "SUP-901",
+              "amount": 48000.0,
+              "currency": "CNY",
+              "marker": "ALPHA-ORDER-TWO-MARKER"
+            }
+          }
+        ],
+        "suppliers": [
+          {
+            "record_id": "SUP-901",
+            "payload": {
+              "supplier_id": "SUP-901",
+              "name": "Alpha synthetic supplier",
+              "sanctions_status": "clear",
+              "marker": "ALPHA-SUPPLIER-MARKER"
+            }
+          }
+        ],
+        "transactions": [
+          {
+            "record_id": "TXN-902-A",
+            "payload": {
+              "transaction_id": "TXN-902-A",
+              "purchase_order_id": "PO-902",
+              "supplier_id": "SUP-901",
+              "amount": 48000.0,
+              "marker": "ALPHA-TXN-TWO-MARKER"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tenant_id": "tenant-beta",
+      "case_id": "CASE-ALPHA-001",
+      "label": "Beta synthetic purchase order",
+      "case_type": "purchase_order",
+      "scenario": "low",
+      "purchase_order_id": "PO-901",
+      "case_version": "case-beta-001.v1",
+      "documents": [
+        {
+          "document_id": "DOC-ALPHA-001",
+          "source_id": "SRC-ALPHA-001",
+          "category": "policy",
+          "content": "Synthetic case document tenant-beta CASE-ALPHA-001: competitive bidding threshold evidence with marker BETA-CASE-ONE."
+        }
+      ],
+      "procurement": {
+        "orders": [
+          {
+            "record_id": "PO-901",
+            "payload": {
+              "purchase_order_id": "PO-901",
+              "supplier_id": "SUP-901",
+              "amount": 7700.0,
+              "currency": "CNY",
+              "marker": "BETA-ORDER-MARKER"
+            }
+          }
+        ],
+        "suppliers": [
+          {
+            "record_id": "SUP-901",
+            "payload": {
+              "supplier_id": "SUP-901",
+              "name": "Beta synthetic supplier",
+              "sanctions_status": "clear",
+              "marker": "BETA-SUPPLIER-MARKER"
+            }
+          }
+        ],
+        "transactions": [
+          {
+            "record_id": "TXN-901-B",
+            "payload": {
+              "transaction_id": "TXN-901-B",
+              "purchase_order_id": "PO-901",
+              "supplier_id": "SUP-901",
+              "amount": 7700.0,
+              "marker": "BETA-TXN-B-MARKER"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tenant_id": "tenant-beta",
+      "case_id": "CASE-BETA-002",
+      "label": "Beta synthetic contract change",
+      "case_type": "contract_change",
+      "scenario": "unknown",
+      "purchase_order_id": "PO-902",
+      "case_version": "case-beta-002.v1",
+      "documents": [
+        {
+          "document_id": "DOC-BETA-002",
+          "source_id": "SRC-BETA-002",
+          "category": "contract",
+          "content": "Synthetic case document tenant-beta CASE-BETA-002: payment terms termination rights with marker BETA-CASE-TWO."
+        }
+      ],
+      "procurement": {
+        "orders": [
+          {
+            "record_id": "PO-902",
+            "payload": {
+              "purchase_order_id": "PO-902",
+              "supplier_id": "SUP-902",
+              "amount": 3050.0,
+              "currency": "CNY",
+              "marker": "BETA-ORDER-TWO-MARKER"
+            }
+          }
+        ],
+        "suppliers": [
+          {
+            "record_id": "SUP-902",
+            "payload": {
+              "supplier_id": "SUP-902",
+              "name": "Beta synthetic supplier two",
+              "sanctions_status": "clear",
+              "marker": "BETA-SUPPLIER-TWO-MARKER"
+            }
+          }
+        ],
+        "transactions": [
+          {
+            "record_id": "TXN-902-A",
+            "payload": {
+              "transaction_id": "TXN-902-A",
+              "purchase_order_id": "PO-902",
+              "supplier_id": "SUP-902",
+              "amount": 3050.0,
+              "marker": "BETA-TXN-TWO-MARKER"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "queries": [
+    {
+      "query": "competitive bidding threshold",
+      "fake_vector_scores": {
+        "DOC-ALPHA-001": 0.98,
+        "DOC-SHARED-001": 0.61,
+        "DOC-SHARED-002": 0.44,
+        "DOC-ALPHA-002": 0.32,
+        "DOC-BETA-002": 0.27
+      }
+    },
+    {
+      "query": "sanctions supplier onboarding",
+      "fake_vector_scores": {
+        "DOC-SHARED-002": 0.93,
+        "DOC-ALPHA-001": 0.35,
+        "DOC-BETA-002": 0.3
+      }
+    },
+    {
+      "query": "payment terms termination rights",
+      "fake_vector_scores": {
+        "DOC-SHARED-003": 0.88,
+        "DOC-ALPHA-002": 0.72,
+        "DOC-BETA-002": 0.66,
+        "DOC-ALPHA-001": 0.31
+      }
+    }
+  ]
+}

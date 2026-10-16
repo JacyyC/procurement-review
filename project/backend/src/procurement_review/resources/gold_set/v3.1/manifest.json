@@ -1,0 +1,48 @@
+{
+  "case_count": 180,
+  "case_ids_sha256": "25b3251f26bc59f924ba96be4c381ba839e6fac9d90a91535873e093e2da7428",
+  "cases_payload_sha256": "2f26f931756b20b602322f7dd9be816ae1cfacd93374825be071bbd76eb1b42f",
+  "conflict_counts": {
+    "dev": 18,
+    "validation": 9
+  },
+  "corpus_snapshot_id": "synthetic-gold-corpus.v3.1",
+  "generation_family_count": 12,
+  "generator_version": "procurement-gold-generator.v3.1",
+  "gold_set_version": "gold-set.v3.1",
+  "high_risk_counts": {
+    "dev": 36,
+    "validation": 18
+  },
+  "manifest_sha256": "32eb5c2488c6a3fbc4a2a1c4128d2a05df04868490edd257c91a7e35abf1263d",
+  "near_duplicate_group_count": 12,
+  "recommendation_counts": {
+    "dev": {
+      "insufficient_information": 18,
+      "needs_human_review": 36,
+      "recommend_approve": 24,
+      "recommend_conditional": 18,
+      "recommend_reject": 24
+    },
+    "validation": {
+      "insufficient_information": 9,
+      "needs_human_review": 18,
+      "recommend_approve": 12,
+      "recommend_conditional": 9,
+      "recommend_reject": 12
+    }
+  },
+  "schema_version": "gold-manifest.v2",
+  "security_counts": {
+    "dev": 18,
+    "validation": 9
+  },
+  "seed": 20260919,
+  "split_counts": {
+    "dev": 120,
+    "validation": 60
+  },
+  "truth_count": 180,
+  "truth_ids_sha256": "25b3251f26bc59f924ba96be4c381ba839e6fac9d90a91535873e093e2da7428",
+  "truth_payload_sha256": "4a6702d57b5e9cf9cc92510ded6ab80febec536aebb7080930af2177775fc619"
+}

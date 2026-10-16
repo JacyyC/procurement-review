@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "procurement-review-baseline"
+version = "0.1.0"
+description = "Read-only retrieval, MCP workers, and deterministic review orchestration"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi==0.141.1",
+  "httpx==0.28.1",
+  "langgraph==1.2.11",
+  "mcp==2.2.0",
+  "pgvector==0.5.0",
+  "pydantic>=2.10,<3",
+  "psycopg[binary]==3.3.4",
+  "pypdf==6.19.0",
+  "sqlalchemy==2.0.52",
+  "uvicorn==0.52.4",
+]
+
+[dependency-groups]
+dev = [
+  "pytest==9.0.3",
+  "pytest-cov>=7.1.0",
+  "ruff==0.12.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/procurement_review"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/procurement_review",
+  "tests",
+  "pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+# 显式固化（V1-06 AC-04）：target 与 requires-python 对齐；行宽为 ruff 默认 88，
+# 当前 81 个文件在该口径下 `ruff format --check` 零改动全绿。
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+# 规则集显式选定与 ruff 默认相同的集合：E4/E7/E9（pycodestyle 错误子集）+ F（Pyflakes）。
+# 约束是"当前代码零改动全绿"：全量 `ruff check` 实测通过；扩大规则集会把本项
+# 变成大规模代码重排，超出审计发现的处置范围（选择理由见 V1-06 log）。
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.format]
+# 与既有代码风格一致（均为 ruff 默认值，此处显式写明防漂移）。
+quote-style = "double"
+indent-style = "space"

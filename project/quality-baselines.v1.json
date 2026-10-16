@@ -1,0 +1,52 @@
+{
+  "api_factory_max_lines": {
+    "create_app": 200
+  },
+  "baseline_version": 1,
+  "coverage": {
+    "backend": {
+      "branch_percent": 72.98,
+      "line_percent": 87.69
+    },
+    "frontend": {
+      "branch_percent": 90.15,
+      "line_percent": 96.27
+    }
+  },
+  "coverage_tolerance_pp": 0.1,
+  "git_head": "1f2e4a98d4de10e27ad17fa36b0448ed41a34f36",
+  "guarded_files": {
+    "project/backend/src/procurement_review/chat_adapter.py": 1087,
+    "project/backend/src/procurement_review/eval_audit.py": 1985,
+    "project/backend/src/procurement_review/eval_contract.py": 859,
+    "project/backend/src/procurement_review/eval_metrics.py": 1051,
+    "project/backend/src/procurement_review/eval_run.py": 907,
+    "project/backend/src/procurement_review/execution_guards.py": 304,
+    "project/backend/src/procurement_review/gold_set.py": 1758,
+    "project/backend/src/procurement_review/ingestion.py": 980,
+    "project/backend/src/procurement_review/record_guard.py": 557,
+    "project/backend/src/procurement_review/record_inventory.py": 293,
+    "project/backend/src/procurement_review/record_rows.py": 534,
+    "project/backend/src/procurement_review/review_repository.py": 1722,
+    "project/backend/src/procurement_review/review_schema.py": 449,
+    "project/backend/src/procurement_review/review_service.py": 1252,
+    "project/backend/src/procurement_review/review_store.py": 1205,
+    "project/backend/src/procurement_review/rules.py": 853,
+    "project/backend/src/procurement_review/run_audit.py": 139,
+    "project/backend/src/procurement_review/run_errors.py": 94,
+    "project/backend/src/procurement_review/run_idempotency.py": 126,
+    "project/backend/src/procurement_review/run_projection.py": 185,
+    "project/backend/src/procurement_review/run_records.py": 553,
+    "project/backend/src/procurement_review/run_trace.py": 233,
+    "project/backend/src/procurement_review/security_recovery_check.py": 1518,
+    "project/backend/src/procurement_review/smoke_run.py": 891,
+    "project/backend/src/procurement_review/synthetic.py": 1034,
+    "project/frontend/src/App.test.tsx": 1159,
+    "project/frontend/src/App.tsx": 1489,
+    "project/frontend/src/styles.css": 594
+  },
+  "guarded_registry": 1,
+  "measured_at": "2026-09-14T17:49:40+00:00",
+  "size_exemptions": {},
+  "updated_at": "2026-09-14T17:50:07+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "procurement-review-workbench",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage --coverage.reporter=json-summary --coverage.clean=false --maxWorkers=1 --fileParallelism=false",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "build:probe": "vite build --config e2e/probe/vite.config.ts",
+    "e2e:probe": "npm run build && npm run build:probe && playwright test --config e2e/probe/playwright.config.ts",
+    "e2e:layout": "playwright test --config e2e/layout/playwright.layout.config.ts",
+    "e2e:states": "playwright test --config e2e/visual/playwright.states.config.ts"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "6.10.0",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.6",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "@vitejs/plugin-react": "6.1.1",
+    "@vitest/coverage-v8": "4.1.11",
+    "eslint": "9.39.4",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.4.26",
+    "jsdom": "27.4.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.68.0",
+    "vite": "8.2.2",
+    "vitest": "4.1.11"
+  }
+}
